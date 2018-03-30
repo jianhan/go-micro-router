@@ -1,32 +1,20 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"net/http"
-	"strings"
-	"errors"
 	"log"
+	"net/http"
 	"os"
 
-	"github.com/codegangsta/negroni"
-	"github.com/auth0/go-jwt-middleware"
-	"github.com/dgrijalva/jwt-go"
-	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
-	"github.com/y0ssar1an/q"
-	"time"
 	"github.com/jianhan/go-micro-router/handler"
+	"github.com/joho/godotenv"
 )
-
-
 
 func main() {
 	err := godotenv.Load()
 	if err != nil {
 		panic("Error loading .env file")
 	}
-
 
 	//r := mux.NewRouter()
 	//
@@ -70,13 +58,8 @@ func main() {
 		panic(err)
 	}
 	srv := &http.Server{
-		Handler:      r,
-		Addr:         fmt.Sprintf("%s:%s", os.Getenv("ADDRESS"), os.Getenv("PORT")),
+		Handler: r,
+		Addr:    fmt.Sprintf("%s:%s", os.Getenv("ADDRESS"), os.Getenv("PORT")),
 	}
 	log.Fatal(srv.ListenAndServe())
 }
-
-
-
-
-
