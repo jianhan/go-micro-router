@@ -55,16 +55,18 @@ func (s *schemaGenerator) Generate() (schema graphql.Schema, err error) {
 	if err != nil {
 		return
 	}
-	rootQuery := graphql.ObjectConfig{Name: RootQuery.String(), Fields: rootQueryFields}
+	rootQuery := graphql.ObjectConfig{Name: RootQuery.String(), Fields: *rootQueryFields}
 	// generate root mutation
-	rootMutationFields, err := s.fields(RootMutation.String())
-	if err != nil {
-		return
-	}
-	rootMutation := graphql.ObjectConfig{Name: RootMutation.String(), Fields: rootMutationFields}
+	//rootMutationFields, err := s.fields(RootMutation.String())
+	//if err != nil {
+	//	return
+	//}
+	//rootMutation := graphql.ObjectConfig{Name: RootMutation.String(), Fields: *rootMutationFields}
 	// generate schema
-	schemaConfig := graphql.SchemaConfig{Query: graphql.NewObject(rootQuery), Mutation: graphql.NewObject(rootMutation)}
-	schema, err = graphql.NewSchema(schemaConfig)
+	schema, err = graphql.NewSchema(graphql.SchemaConfig{
+		Query: graphql.NewObject(rootQuery),
+		//Mutation: graphql.NewObject(rootMutation),
+	})
 	if err != nil {
 		return
 	}

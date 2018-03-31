@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/jianhan/go-micro-router/gql"
+	"github.com/jianhan/go-micro-router/gql/query"
 	"github.com/jianhan/go-micro-router/handler"
 	"github.com/joho/godotenv"
 )
@@ -53,7 +55,7 @@ func main() {
 	//		message := "Hello from a private endpoint! You need to be authenticated to see this."
 	//		responseJSON(message, w, http.StatusOK)
 	//	}))))
-	r, err := handler.GetRouter()
+	r, err := handler.GetRouter(gql.NewGQLSchemaGenerator(query.QueryMap, nil))
 	if err != nil {
 		panic(err)
 	}
