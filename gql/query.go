@@ -1,4 +1,4 @@
-package query
+package gql
 
 import (
 	"github.com/graphql-go/graphql"
@@ -8,5 +8,5 @@ import (
 var QueryMap = map[string]*graphql.Field{}
 
 func init() {
-	QueryMap["course"] = getCoursesQuery(course.NewCoursesClient("", nil))
+	QueryMap["courses"] = getCoursesQuery(course.NewCoursesClient("", nil))
 }
