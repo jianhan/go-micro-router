@@ -1,8 +1,10 @@
 package query
 
 import (
+	"context"
+
 	"github.com/graphql-go/graphql"
-	"github.com/y0ssar1an/q"
+	pcourse "github.com/jianhan/go-micro-courses/proto/course"
 )
 
 var courseType = graphql.NewObject(graphql.ObjectConfig{
@@ -20,9 +22,9 @@ var courseType = graphql.NewObject(graphql.ObjectConfig{
 	},
 })
 
-func getCoursesQuery() *graphql.Field {
+func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 	return &graphql.Field{
-		Type:        courseType,
+		Type:        graphql.NewList(courseType),
 		Description: "Get courses",
 		Args: graphql.FieldConfigArgument{
 			"ids": &graphql.ArgumentConfig{
@@ -30,8 +32,11 @@ func getCoursesQuery() *graphql.Field {
 			},
 		},
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-			q.Q(params)
-			return nil, nil
+			courses, err := coursesClient.FindCourses(context.Background(), &pcourse.FindCoursesRequest{})
+			if err != nil {
+				return nil, err
+			}
+			return courses.Courses, nil
 		},
 	}
 }
