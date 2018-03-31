@@ -25,6 +25,8 @@ type GQLField func(courseClient *pcourse.CoursesClient) (string, *graphql.Field)
 
 type GQLSchemaGenerator interface {
 	Generate() (schema graphql.Schema, err error)
+	AddRootQueryField(string, *graphql.Field)
+	AddMutationField(string, *graphql.Field)
 }
 
 type schemaGenerator struct {
@@ -39,6 +41,14 @@ func NewGQLSchemaGenerator(rootQueries, rootMutations map[string]*graphql.Field)
 	}
 }
 
+func (s *schemaGenerator) AddRootQueryField(key string, value *graphql.Field) {
+	s.rootQuery[key] = value
+}
+
+func (s *schemaGenerator) AddMutationField(key string, value *graphql.Field) {
+	s.rootMutation[key] = value
+}
+
 func (s *schemaGenerator) Generate() (schema graphql.Schema, err error) {
 	// generate root query
 	rootQueryFields, err := s.fields(RootQuery.String())
@@ -51,7 +61,7 @@ func (s *schemaGenerator) Generate() (schema graphql.Schema, err error) {
 	if err != nil {
 		return
 	}
-	rootMutation := graphql.ObjectConfig{Name: RootMutation.String(), rootMutationFields}
+	rootMutation := graphql.ObjectConfig{Name: RootMutation.String(), Fields: rootMutationFields}
 	// generate schema
 	schemaConfig := graphql.SchemaConfig{Query: graphql.NewObject(rootQuery), Mutation: graphql.NewObject(rootMutation)}
 	schema, err = graphql.NewSchema(schemaConfig)
