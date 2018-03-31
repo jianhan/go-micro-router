@@ -1,40 +1,30 @@
 package handler
 
 import (
-	"log"
-
 	"github.com/gorilla/mux"
-	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
+	"github.com/jianhan/go-micro-router/gql"
 )
 
-func GetRouter() (*mux.Router, error) {
+func GetRouter(g gql.GQLSchemaGenerator) (*mux.Router, error) {
 	r := mux.NewRouter()
-	r.Handle("/agql", GetAdminHandler())
+	adminGQLHandler, err := adminGQLHandler(g)
+	if err != nil {
+		return nil, err
+	}
+	r.Handle("/agql", adminGQLHandler)
 	return r, nil
 }
 
-func GetAdminHandler() *handler.Handler {
-	// define GraphQL schema using relay library helpers
-	fields := graphql.Fields{
-		"hello": &graphql.Field{
-			Type: graphql.String,
-			Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-				return "world", nil
-			},
-		},
-	}
-	rootQuery := graphql.ObjectConfig{Name: "RootQuery", Fields: fields}
-	schemaConfig := graphql.SchemaConfig{Query: graphql.NewObject(rootQuery)}
-	schema, err := graphql.NewSchema(schemaConfig)
+func adminGQLHandler(g gql.GQLSchemaGenerator) (*handler.Handler, error) {
+	schema, err := g.Generate()
 	if err != nil {
-		log.Fatalf("failed to create new schema, error: %v", err)
+		return nil, err
 	}
-
 	h := handler.New(&handler.Config{
 		Schema:   &schema,
 		Pretty:   true,
 		GraphiQL: true,
 	})
-	return h
+	return h, nil
 }
