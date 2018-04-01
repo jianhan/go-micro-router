@@ -34,10 +34,10 @@ type schemaGenerator struct {
 	rootMutation map[string]*graphql.Field
 }
 
-func NewGQLSchemaGenerator(rootQueries, rootMutations map[string]*graphql.Field) GQLSchemaGenerator {
+func NewGQLSchemaGenerator(rootQuery, rootMutation map[string]*graphql.Field) GQLSchemaGenerator {
 	return &schemaGenerator{
-		rootQuery:    rootQueries,
-		rootMutation: rootMutations,
+		rootQuery:    rootQuery,
+		rootMutation: rootMutation,
 	}
 }
 
