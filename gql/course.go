@@ -69,12 +69,29 @@ func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 		},
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			req := &pcourse.FindCoursesRequest{}
+			// ids
+			if ids, found := params.Args["ids"]; found {
+				if idSlice, ok := ids.([]interface{}); ok {
+					for _, v := range idSlice {
+						req.Ids = append(req.Ids, v.(string))
+					}
+				}
+			}
+			// start
 			startProtoTimestamp, found, err := GetProtoTimestamp(params, "start", time.RFC3339)
 			if err != nil {
 				return nil, err
 			}
 			if found {
 				req.Start = startProtoTimestamp
+			}
+			// end
+			endProtoTimestamp, found, err := GetProtoTimestamp(params, "end", time.RFC3339)
+			if err != nil {
+				return nil, err
+			}
+			if found {
+				req.End = endProtoTimestamp
 			}
 			courses, err := coursesClient.FindCourses(context.Background(), req)
 			if err != nil {

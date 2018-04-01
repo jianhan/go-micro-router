@@ -17,6 +17,9 @@ func init() {
 }
 
 func GetProtoTimestamp(params graphql.ResolveParams, field, format string) (*timestamp.Timestamp, bool, error) {
+	if _, found := params.Args[field]; !found {
+		return nil, false, nil
+	}
 	if startStr, ok := params.Args[field].(string); ok {
 		t, err := time.Parse(format, startStr)
 		if err != nil {
