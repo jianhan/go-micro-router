@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec474040-e716-41d2-849a-64beb32c9d16" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/gql/course.go" afterPath="$PROJECT_DIR$/gql/course.go" />
-      <change beforePath="$PROJECT_DIR$/gql/gql.go" afterPath="$PROJECT_DIR$/gql/gql.go" />
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,10 +16,10 @@
       <file leaf-file-name="course.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gql/course.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="85" column="78" lean-forward="false" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
+            <state relative-caret-position="289">
+              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
               <folding>
-                <element signature="e#13#221#0" expanded="true" />
+                <element signature="e#13#268#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,7 +48,7 @@
       <file leaf-file-name="definition.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
+            <state relative-caret-position="1831">
               <caret line="569" column="4" lean-forward="false" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
               <folding />
             </state>
@@ -612,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="569" column="4" lean-forward="false" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/time/format.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -636,12 +625,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1831">
+          <caret line="569" column="4" lean-forward="false" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gql/course.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="85" column="78" lean-forward="false" selection-start-line="85" selection-start-column="78" selection-end-line="85" selection-end-column="78" />
+        <state relative-caret-position="289">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
-            <element signature="e#13#221#0" expanded="true" />
+            <element signature="e#13#268#0" expanded="true" />
           </folding>
         </state>
       </provider>
