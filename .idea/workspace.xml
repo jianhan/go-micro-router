@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec474040-e716-41d2-849a-64beb32c9d16" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Godeps/Godeps.json" afterPath="$PROJECT_DIR$/Godeps/Godeps.json" />
       <change beforePath="$PROJECT_DIR$/gql/course.go" afterPath="$PROJECT_DIR$/gql/course.go" />
+      <change beforePath="$PROJECT_DIR$/gql/query.go" afterPath="$PROJECT_DIR$/gql/query.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,10 +19,10 @@
       <file leaf-file-name="course.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gql/course.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
               <folding>
-                <element signature="e#13#268#0" expanded="true" />
+                <element signature="e#13#174#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/vendor/github.com/jianhan/go-micro-courses/proto/course/course.micro.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="193">
-              <caret line="53" column="92" lean-forward="true" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
+              <caret line="53" column="92" lean-forward="false" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -108,10 +111,10 @@
       <file leaf-file-name="query.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gql/query.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#13#108#0" expanded="true" />
+                <element signature="e#13#211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,8 +159,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/gql/gql.go" />
-        <option value="$PROJECT_DIR$/gql/query.go" />
         <option value="$PROJECT_DIR$/gql/course.go" />
+        <option value="$PROJECT_DIR$/gql/query.go" />
       </list>
     </option>
   </component>
@@ -559,20 +562,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gql/query.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#13#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/jianhan/go-micro-courses/proto/course/course.micro.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
-          <caret line="53" column="92" lean-forward="true" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
+          <caret line="53" column="92" lean-forward="false" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -633,12 +626,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gql/query.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#13#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gql/course.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
           <folding>
-            <element signature="e#13#268#0" expanded="true" />
+            <element signature="e#13#174#0" expanded="true" />
           </folding>
         </state>
       </provider>

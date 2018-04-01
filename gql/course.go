@@ -2,12 +2,9 @@ package gql
 
 import (
 	"context"
-	"errors"
 
 	"time"
 
-	"github.com/golang/protobuf/ptypes"
-	"github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/graphql-go/graphql"
 	pcourse "github.com/jianhan/go-micro-courses/proto/course"
 	"github.com/jianhan/pkg/gql/scalar"
@@ -72,7 +69,7 @@ func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 		},
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			req := &pcourse.FindCoursesRequest{}
-			startProtoTimestamp, found, err := GetProtoTimestamp(params, "start")
+			startProtoTimestamp, found, err := GetProtoTimestamp(params, "start", time.RFC3339)
 			if err != nil {
 				return nil, err
 			}
@@ -86,19 +83,4 @@ func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 			return courses.Courses, nil
 		},
 	}
-}
-
-func GetProtoTimestamp(params graphql.ResolveParams, field string) (*timestamp.Timestamp, bool, error) {
-	if startStr, ok := params.Args["start"].(string); ok {
-		t, err := time.Parse(time.RFC3339, startStr)
-		if err != nil {
-			return nil, true, errors.New("start time is not a valid RFC3339 format")
-		}
-		pt, err := ptypes.TimestampProto(t)
-		if err != nil {
-			return nil, true, errors.New("can not parse start time")
-		}
-		return pt, true, nil
-	}
-	return nil, false, nil
 }
