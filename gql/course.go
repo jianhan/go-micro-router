@@ -93,6 +93,32 @@ func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 			if found {
 				req.End = endProtoTimestamp
 			}
+			// inclusive
+			if in, found := params.Args["inclusive"]; found {
+				if in, ok := in.(bool); ok {
+					req.Inclusive = in
+				}
+			}
+			// sort
+			if s, found := params.Args["sort"]; found {
+				if s, ok := s.([]interface{}); ok {
+					for _, v := range s {
+						req.Sort = append(req.Sort, v.(string))
+					}
+				}
+			}
+			// per page
+			if i, found := params.Args["per_page"]; found {
+				if i, ok := i.(int); ok {
+					req.PerPage = int64(i)
+				}
+			}
+			// current page
+			if i, found := params.Args["current_page"]; found {
+				if i, ok := i.(int); ok {
+					req.PerPage = int64(i)
+				}
+			}
 			courses, err := coursesClient.FindCourses(context.Background(), req)
 			if err != nil {
 				return nil, err

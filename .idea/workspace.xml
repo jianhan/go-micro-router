@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ec474040-e716-41d2-849a-64beb32c9d16" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/gql/course.go" afterPath="$PROJECT_DIR$/gql/course.go" />
-      <change beforePath="$PROJECT_DIR$/gql/query.go" afterPath="$PROJECT_DIR$/gql/query.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +16,21 @@
       <file leaf-file-name="course.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gql/course.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="100" column="12" lean-forward="false" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
               <folding>
                 <element signature="e#13#174#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scalars.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/scalars.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1411">
+              <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,18 +58,8 @@
       <file leaf-file-name="definition.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="569" column="4" lean-forward="false" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course.micro.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/github.com/jianhan/go-micro-courses/proto/course/course.micro.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="53" column="92" lean-forward="false" selection-start-line="53" selection-start-column="92" selection-end-line="53" selection-end-column="92" />
+            <state relative-caret-position="-969">
+              <caret line="564" column="5" lean-forward="false" selection-start-line="564" selection-start-column="5" selection-end-line="564" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -628,16 +627,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="569" column="4" lean-forward="false" selection-start-line="569" selection-start-column="4" selection-end-line="569" selection-end-column="4" />
+        <state relative-caret-position="-969">
+          <caret line="564" column="5" lean-forward="false" selection-start-line="564" selection-start-column="5" selection-end-line="564" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/scalars.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="108" column="4" lean-forward="false" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gql/course.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="100" column="12" lean-forward="false" selection-start-line="100" selection-start-column="12" selection-end-line="100" selection-end-column="12" />
           <folding>
             <element signature="e#13#174#0" expanded="true" />
           </folding>
