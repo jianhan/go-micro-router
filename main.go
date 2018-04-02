@@ -18,8 +18,8 @@ func main() {
 		panic("Error loading .env file")
 	}
 	r, err := handler.GetRouter(gql.NewGQLSchemaGenerator(
-		gql.NewQueryGenerator(pcourse.NewCoursesClient("", nil)),
-		gql.NewMutationGenerator(pcourse.NewCoursesClient("", nil)),
+		gql.NewQueryGenerator(pcourse.NewCourseServiceClient("", nil)),
+		gql.NewMutationGenerator(pcourse.NewCourseServiceClient("", nil)),
 	))
 	if err != nil {
 		panic(err)

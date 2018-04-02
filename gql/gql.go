@@ -24,7 +24,7 @@ var configTypes = [...]string{
 
 func (s SchemaConfig) String() string { return configTypes[s] }
 
-type GQLField func(courseClient *pcourse.CoursesClient) (string, *graphql.Field)
+type GQLField func(courseClient *pcourse.CourseServiceClient) (string, *graphql.Field)
 
 type GQLSchemaGenerator interface {
 	Generate() (schema graphql.Schema, err error)

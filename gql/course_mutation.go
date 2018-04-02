@@ -8,7 +8,7 @@ import (
 	"github.com/y0ssar1an/q"
 )
 
-func getCourseMutation(coursesClient pcourse.CoursesClient) *graphql.Field {
+func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 	return &graphql.Field{
 		Type:        courseType,
 		Description: "Create new course",
@@ -36,7 +36,9 @@ func getCourseMutation(coursesClient pcourse.CoursesClient) *graphql.Field {
 			name, _ := params.Args["name"].(string)
 			slug := slug.Make(name)
 			displayOrder, _ := params.Args["display_order"].(int)
-			q.Q(name, slug, displayOrder)
+			start, _ := params.Args["start"].(string)
+			end, _ := params.Args["end"].(string)
+			q.Q(name, slug, displayOrder, start, end)
 			return nil, nil
 
 		},

@@ -6,10 +6,10 @@ import (
 )
 
 type mutationGenerator struct {
-	coursesClient pcourse.CoursesClient
+	coursesClient pcourse.CourseServiceClient
 }
 
-func NewMutationGenerator(coursesClient pcourse.CoursesClient) QueryMutationGenerator {
+func NewMutationGenerator(coursesClient pcourse.CourseServiceClient) QueryMutationGenerator {
 	return &mutationGenerator{
 		coursesClient: coursesClient,
 	}
@@ -17,6 +17,6 @@ func NewMutationGenerator(coursesClient pcourse.CoursesClient) QueryMutationGene
 
 func (q *mutationGenerator) Generate() graphql.Fields {
 	return graphql.Fields{
-		"courses": getCourseMutation(q.coursesClient),
+		"createCourse": createCourse(q.coursesClient),
 	}
 }

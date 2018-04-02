@@ -6,10 +6,10 @@ import (
 )
 
 type queryGenerator struct {
-	coursesClient pcourse.CoursesClient
+	coursesClient pcourse.CourseServiceClient
 }
 
-func NewQueryGenerator(coursesClient pcourse.CoursesClient) QueryMutationGenerator {
+func NewQueryGenerator(coursesClient pcourse.CourseServiceClient) QueryMutationGenerator {
 	return &queryGenerator{
 		coursesClient: coursesClient,
 	}
@@ -17,6 +17,6 @@ func NewQueryGenerator(coursesClient pcourse.CoursesClient) QueryMutationGenerat
 
 func (q *queryGenerator) Generate() graphql.Fields {
 	return graphql.Fields{
-		"courses": getCourseQuery(q.coursesClient),
+		"courses": courses(q.coursesClient),
 	}
 }

@@ -40,7 +40,7 @@ var courseType = graphql.NewObject(graphql.ObjectConfig{
 	},
 })
 
-func getCourseQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
+func courses(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 	return &graphql.Field{
 		Type:        graphql.NewList(courseType),
 		Description: "Get courses",
@@ -71,7 +71,7 @@ func getCourseQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 			},
 		},
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
-			req := &pcourse.FindCoursesRequest{}
+			req := &pcourse.FindCoursesReq{}
 			// ids
 			if ids, found := params.Args["ids"]; found {
 				if idSlice, ok := ids.([]interface{}); ok {
