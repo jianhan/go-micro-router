@@ -2,12 +2,14 @@ package gql
 
 import (
 	"context"
+	"errors"
+	"time"
 
-	"github.com/gosimple/slug"
+	"github.com/golang/protobuf/ptypes"
+	slugMaker "github.com/gosimple/slug"
 	"github.com/graphql-go/graphql"
 	pcourse "github.com/jianhan/go-micro-courses/proto/course"
 	"github.com/jianhan/pkg/gql/scalar"
-	"github.com/y0ssar1an/q"
 )
 
 func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
@@ -43,18 +45,43 @@ func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			id, _ := params.Args["id"].(string)
 			name, _ := params.Args["name"].(string)
-			slug := slug.Make(name)
+			slug, _ := params.Args["slug"].(string)
+			if slug == "" {
+				slug = slugMaker.Make(name)
+			}
 			displayOrder, _ := params.Args["display_order"].(int)
 			start, _ := params.Args["start"].(string)
+			startTime, err := time.Parse(time.RFC3339, start)
+			if err != nil {
+				return nil, errors.New("start time is not a valid RFC3339 format")
+			}
+			startTimeProto, err := ptypes.TimestampProto(startTime)
+			if err != nil {
+				return nil, err
+			}
 			end, _ := params.Args["end"].(string)
-			q.Q(name, slug, displayOrder, start, end)
+			endTime, err := time.Parse(time.RFC3339, end)
+			if err != nil {
+				return nil, errors.New("end time is not a valid RFC3339 format")
+			}
+			endTimeProto, err := ptypes.TimestampProto(endTime)
+			if err != nil {
+				return nil, err
+			}
+			description, _ := params.Args["description"].(string)
+			hidden, _ := params.Args["hidden"].(bool)
 			rsp, err := coursesClient.UpsertCourse(
 				context.Background(),
 				&pcourse.UpsertCourseReq{
 					Course: &pcourse.Course{
-						ID:   id,
-						Name: name,
-						Slug: slug,
+						ID:           id,
+						Name:         name,
+						Slug:         slug,
+						Description:  description,
+						DisplayOrder: uint64(displayOrder),
+						Hidden:       hidden,
+						Start:        startTimeProto,
+						End:          endTimeProto,
 					},
 				},
 			)
@@ -62,7 +89,6 @@ func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 				return nil, err
 			}
 			return rsp.Course, nil
-
 		},
 	}
 }
