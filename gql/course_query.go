@@ -37,7 +37,7 @@ var courseType = graphql.NewObject(graphql.ObjectConfig{
 	},
 })
 
-func getCoursesQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
+func getCourseQuery(coursesClient pcourse.CoursesClient) *graphql.Field {
 	return &graphql.Field{
 		Type:        graphql.NewList(courseType),
 		Description: "Get courses",
