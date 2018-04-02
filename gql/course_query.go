@@ -31,6 +31,9 @@ var courseType = graphql.NewObject(graphql.ObjectConfig{
 		"end": &graphql.Field{
 			Type: scalar.ProtoDateTime,
 		},
+		"hidden": &graphql.Field{
+			Type: graphql.Boolean,
+		},
 		"description": &graphql.Field{
 			Type: graphql.String,
 		},

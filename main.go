@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	pcourse "github.com/jianhan/go-micro-courses/proto/course"
 	"github.com/jianhan/go-micro-router/gql"
 	"github.com/jianhan/go-micro-router/handler"
 	"github.com/joho/godotenv"
@@ -16,7 +17,10 @@ func main() {
 	if err != nil {
 		panic("Error loading .env file")
 	}
-	r, err := handler.GetRouter(gql.NewGQLSchemaGenerator(gql.QueryMap, nil))
+	r, err := handler.GetRouter(gql.NewGQLSchemaGenerator(
+		gql.NewQueryGenerator(pcourse.NewCoursesClient("", nil)),
+		gql.NewMutationGenerator(pcourse.NewCoursesClient("", nil)),
+	))
 	if err != nil {
 		panic(err)
 	}
