@@ -41,6 +41,9 @@ func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 			"description": &graphql.ArgumentConfig{
 				Type: graphql.NewNonNull(graphql.String),
 			},
+			"category_ids": &graphql.ArgumentConfig{
+				Type: graphql.NewList(graphql.String),
+			},
 		},
 		Resolve: func(params graphql.ResolveParams) (interface{}, error) {
 			id, _ := params.Args["id"].(string)
@@ -70,6 +73,13 @@ func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 			}
 			description, _ := params.Args["description"].(string)
 			hidden, _ := params.Args["hidden"].(bool)
+			cids, _ := params.Args["category_ids"].([]interface{})
+			categoryIDs := make([]string, 0, len(cids))
+			for _, v := range cids {
+				if cid, ok := v.(string); ok {
+					categoryIDs = append(categoryIDs, cid)
+				}
+			}
 			rsp, err := coursesClient.UpsertCourse(
 				context.Background(),
 				&pcourse.UpsertCourseReq{
@@ -82,6 +92,7 @@ func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 						Hidden:       hidden,
 						Start:        startTimeProto,
 						End:          endTimeProto,
+						CategoryIds:  categoryIDs,
 					},
 				},
 			)

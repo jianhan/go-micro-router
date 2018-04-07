@@ -3,7 +3,6 @@ package gql
 import (
 	"github.com/graphql-go/graphql"
 	pcourse "github.com/jianhan/go-micro-courses/proto/course"
-	"github.com/y0ssar1an/q"
 )
 
 type QueryMutationGenerator interface {
@@ -43,7 +42,6 @@ func NewGQLSchemaGenerator(rqg, rmg QueryMutationGenerator) GQLSchemaGenerator {
 }
 
 func (s *schemaGenerator) Generate() (schema graphql.Schema, err error) {
-	q.Q(s.rootQueryGenerator.Generate())
 	rootQuery := graphql.ObjectConfig{Name: RootQuery.String(), Fields: s.rootQueryGenerator.Generate()}
 	rootMutation := graphql.ObjectConfig{Name: RootMutation.String(), Fields: s.rootMutationGenerator.Generate()}
 	schema, err = graphql.NewSchema(graphql.SchemaConfig{

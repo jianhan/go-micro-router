@@ -37,6 +37,9 @@ var courseType = graphql.NewObject(graphql.ObjectConfig{
 		"description": &graphql.Field{
 			Type: graphql.String,
 		},
+		"category_ids": &graphql.Field{
+			Type: graphql.NewList(graphql.String),
+		},
 	},
 })
 
