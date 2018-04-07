@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/gql/course_mutation.go" afterPath="$PROJECT_DIR$/gql/course_mutation.go" />
       <change beforePath="$PROJECT_DIR$/gql/course_query.go" afterPath="$PROJECT_DIR$/gql/course_query.go" />
       <change beforePath="$PROJECT_DIR$/gql/gql.go" afterPath="$PROJECT_DIR$/gql/gql.go" />
+      <change beforePath="$PROJECT_DIR$/gql/mutation.go" afterPath="$PROJECT_DIR$/gql/mutation.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="course_mutation.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="course_mutation.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gql/course_mutation.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="77" column="35" lean-forward="false" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+            <state relative-caret-position="136">
+              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
               <folding>
                 <element signature="e#13#258#0" expanded="true" />
               </folding>
@@ -60,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mutation.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mutation.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gql/mutation.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
               <folding>
                 <element signature="e#13#116#0" expanded="true" />
               </folding>
@@ -168,12 +169,12 @@
         <option value="$PROJECT_DIR$/gql/course.go" />
         <option value="$PROJECT_DIR$/handler/middleware/jwt.go" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/gql/mutation.go" />
         <option value="$PROJECT_DIR$/gql/query.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/gql/gql.go" />
         <option value="$PROJECT_DIR$/gql/course_query.go" />
         <option value="$PROJECT_DIR$/gql/course_mutation.go" />
+        <option value="$PROJECT_DIR$/gql/mutation.go" />
       </list>
     </option>
   </component>
@@ -650,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gql/mutation.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="e#13#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/github.com/graphql-go/graphql/definition.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -688,10 +679,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gql/course_mutation.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="77" column="35" lean-forward="false" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+        <state relative-caret-position="136">
+          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
           <folding>
             <element signature="e#13#258#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gql/mutation.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#13#116#0" expanded="true" />
           </folding>
         </state>
       </provider>

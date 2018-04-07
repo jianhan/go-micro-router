@@ -17,6 +17,6 @@ func NewMutationGenerator(coursesClient pcourse.CourseServiceClient) QueryMutati
 
 func (q *mutationGenerator) Generate() graphql.Fields {
 	return graphql.Fields{
-		"createCourse": createCourse(q.coursesClient),
+		"upsertCourse": upsertCourse(q.coursesClient),
 	}
 }

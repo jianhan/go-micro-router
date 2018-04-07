@@ -12,7 +12,7 @@ import (
 	"github.com/jianhan/pkg/gql/scalar"
 )
 
-func createCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
+func upsertCourse(coursesClient pcourse.CourseServiceClient) *graphql.Field {
 	return &graphql.Field{
 		Type:        courseType,
 		Description: "Create new course",
